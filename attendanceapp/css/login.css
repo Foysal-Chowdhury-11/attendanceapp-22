@@ -1,0 +1,164 @@
+*
+{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    height:100vh;
+    background-color: rgba(216, 216, 216, 0.916);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginform
+{
+    width:min(450px,95%);
+    height: 580px;
+    border: none; 
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 35px; 
+    transition: all 0.3s ease;
+}
+
+.loginform:hover{
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15); 
+}
+
+
+.form-title {
+    font-size: 2.2em; 
+    color: #333; 
+    margin-bottom: 30px; 
+    width: 85%; 
+    text-align: left; 
+}
+
+
+.inputgroup {
+    position: relative;
+    height: 50px;
+    width: 85%; 
+    margin-bottom: 1px; 
+}
+
+.inputgroup input {
+    position: absolute;
+    width: 100%;
+    height: 45px;
+    background-color: rgb(255, 255, 255);
+    outline: none;
+    border: solid 1px rgb(220, 220, 220); 
+    color: rgb(50, 50, 50); 
+    font-size: 16px; 
+    padding: 0 10px; 
+    border-radius: 4px; 
+    transition: all 200ms ease;
+}
+
+.inputgroup label
+{
+    position:absolute;
+    transition: all 200ms;
+    color:red;
+}
+
+.inputgroup label {
+    position: absolute;
+    left: 10px; 
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 200ms ease;
+    color: rgb(150, 150, 150); 
+    font-size: 16px;
+    pointer-events: none; 
+}
+
+
+.inputgroup input:hover,
+.inputgroup input:focus {
+    border-color: rgb(0, 120, 255); 
+}
+
+
+.inputgroup input:focus + label,
+.inputgroup input:valid + label {
+    
+    transform: translate(0px, -33px); 
+    font-size: 12px;
+    color: rgb(0, 120, 255);
+    background-color: white; 
+    padding: 0 5px; 
+    
+    left: 5px; 
+}
+
+Removed unused margin classes 
+.topmargin { margin-top: 50px; }
+.topmarginlarge { margin-top: 80px; }
+
+.btnlogin {
+    border: none; 
+    background-color: rgb(0, 120, 255); 
+    width: 120%; 
+    height: 45px;
+    padding: 5px;
+    border-radius: 4px; 
+    color: white;
+    font-size: 18px; 
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    margin-top: px; 
+}
+
+.btnlogin:hover{
+    transform: translateY(-2px); 
+    background-color: rgb(0, 90, 220); 
+}
+.inactivecolor
+{
+    background-color: rgb(190, 22, 22);
+}
+.activecolor
+{
+    background-color: rgb(50, 168, 247);
+}
+
+.diverror
+{
+    background-color: transparent;
+    color: rgb(190, 22, 22);
+    height:45px;
+    width:85%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s;
+    letter-spacing: 1px;
+}
+.applyerrordiv
+{
+    visibility: visible;
+    opacity: 1;
+    animation:falldown 1s linear;
+}
+@keyframes falldown {
+    0%{opacity: 0;transform: translateY(-100px);}
+    49%{opacity: 1;transform: translateY(0px);letter-spacing: 1px;}
+    50%{opacity: 1;transform: translateY(0px);letter-spacing: 3px;}
+    55%{opacity: 1;transform: translateY(0px);letter-spacing: 1px;}
+    60%{opacity: 1;transform: translateY(-50px);}
+    80%{opacity: 1;transform: translateY(0px);}
+    85%{opacity: 1;transform: translateY(-10px);}
+    100%{opacity: 1;transform: translateY(0px);}
+}
